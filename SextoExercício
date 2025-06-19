@@ -1,0 +1,22 @@
+package Main;
+
+import java.util.ArrayList;
+
+public class Main {
+    public static void main(String[] args) {
+
+        ArrayList<String> horarios = new ArrayList<>();
+        horarios.add("08:00");
+        horarios.add("10:00");
+        horarios.add("12:00");
+        horarios.remove(1);
+        horarios.add("14:00");
+
+        // 0, 1, 2, 3
+        // 8, 10, 12 ... tira o 10
+        // 8, 12, 14.
+        
+        System.out.println("Horario na posicao 1: " horarios.get(1));
+
+    }
+}
