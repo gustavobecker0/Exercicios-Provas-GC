@@ -1,0 +1,37 @@
+package Main;
+
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+
+public class Tarefa implements Comparable<Tarefa>{
+
+    String titulo;
+
+    public Tarefa(String titulo){
+        this.titulo = titulo;
+    }
+
+    @Override
+    public int compareTo(Tarefa o) {
+        return this.titulo.compareTo(o.titulo);
+    }
+
+    /*@Override
+    public String toString() {
+        return titulo;
+    }*/
+
+//Neste caso, será impresso a lista ordenada, claro, mas os endereços das tarefas;
+//Isso aconetce porque o método toString não foi reescrito. Isso poderia ser feito com a função que comentei acima.
+//A saida, então, seria [Dormir, Almoçar, Estudar];
+
+    public static void main(String[] args){
+        List<Tarefa> tarefas = new ArrayList<>();
+        tarefas.add(new Tarefa("Estudar"));
+        tarefas.add(new Tarefa("Almoçar"));
+        tarefas.add(new Tarefa("Dormir"));
+        Collections.sort(tarefas);
+        System.out.println(tarefas);
+    }
+}
